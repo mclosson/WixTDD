@@ -1,0 +1,14 @@
+InstallerTest/bin
+InstallerTest/obj
+TestResults
+Local.testsettings
+TraceAndTestImpact.testsettings
+WixTDD/bin
+WixTDD/obj
+WixTDDInstaller/bin
+WixTDDInstaller/obj
+WixTDDInstaller/wix.xsd
+*.pdb
+*.vshost.*
+*.suo
+*.vsmdi

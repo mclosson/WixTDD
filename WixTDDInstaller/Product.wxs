@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="6979b15d-b601-4385-b94a-c8ac8d461c66" Name="WixTDDInstaller" Language="1033" Version="1.0.0.0" Manufacturer="WixTDDInstaller" UpgradeCode="c16417b2-ee99-4453-a22f-093d9f3e6407">
+		<Package InstallerVersion="200" Compressed="yes" />
+
+		<Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLLOCATION" Name="WixTDDInstaller">
+					<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+					<Component Id="ProductComponent" Guid="6e6d7459-92cf-492f-9f20-a8d879803f27">
+						<!-- TODO: Insert files, registry keys, and other resources here. -->
+            <File Id="WixTddExe" KeyPath="yes" Source="..\WixTDD\bin\Debug\WixTDD.exe" />
+            <File Id="WixTddExePdb" Source="..\WixTDD\bin\Debug\WixTDD.pdb" />
+          </Component>
+				</Directory>
+			</Directory>
+		</Directory>
+
+		<Feature Id="ProductFeature" Title="WixTDDInstaller" Level="1">
+			<!-- TODO: Remove the comments around this ComponentRef element and the Component above in order to add resources to this installer. -->
+			<ComponentRef Id="ProductComponent" />
+			
+			<!-- Note: The following ComponentGroupRef is required to pull in generated authoring from project references. -->
+			<ComponentGroupRef Id="Product.Generated" />
+		</Feature>
+	</Product>
+</Wix>
